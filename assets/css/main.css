@@ -1077,36 +1077,78 @@ section,
 }
 
 .hero .hero-subtitle {
-  color: var(--accent-color);
+  color: #fff;
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: block;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(0, 238, 255, 0.1);
 }
 
-body.light-mode .hero .hero-subtitle {
-  text-shadow: none;
-}
-
-.hero h2 {
+.hero .hero-name {
   margin: 0;
   font-size: 64px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero .text-gradient {
+  background: linear-gradient(to right, #00eeff, #9d00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* Fallback */
+  text-shadow: 0 0 30px rgba(157, 0, 255, 0.3);
+}
+
+.hero .hero-typing {
+  font-size: 32px;
   font-weight: 700;
+  color: var(--accent-color);
+  margin-top: 10px;
+  font-family: var(--heading-font);
+}
+
+/* Typed Cursor Styling */
+.typed-cursor {
   color: var(--heading-color);
-  text-shadow: 0 0 15px rgba(0, 238, 255, 0.15);
 }
 
 .hero .hero-bio {
-  color: var(--default-color);
+  color: #a8a9b4;
   margin: 20px 0 30px 0;
   font-size: 18px;
   max-width: 600px;
   line-height: 1.6;
-  font-weight: 500;
-  /* Added for better visibility */
+  font-weight: 400;
+}
+
+.hero .hero-social-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.hero .hero-social-links a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.hero .hero-social-links a:hover {
+  background: var(--accent-color);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px var(--accent-color);
 }
 
 .hero .hero-buttons {
@@ -1180,10 +1222,10 @@ body.light-mode .hero .hero-subtitle {
 }
 
 /* Hero Image & Orbit Styles */
+/* Hero Image & Orbit Styles */
 .hero-img-container {
   position: relative;
   width: 320px;
-  /* Reduced for tighter wrap */
   height: 320px;
   margin: 0 auto;
   display: flex;
@@ -1197,125 +1239,122 @@ body.light-mode .hero .hero-subtitle {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  padding: 5px;
+  padding: 6px;
   background: linear-gradient(135deg, #00eeff, #9d00ff);
-  box-shadow: 0 0 50px rgba(157, 0, 255, 0.4);
+  box-shadow: 0 0 60px rgba(0, 238, 255, 0.2);
   position: relative;
   z-index: 2;
   -webkit-background-clip: content-box, border-box;
   background-clip: content-box, border-box;
 }
 
-/* Base Orbit Circle (Outer Ring) */
+/* Base Orbit Circle (The glow ring) */
 .orbit-circle {
   position: absolute;
-  width: 32px;
-  /* Match container */
-  height: 3200x;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 1px dashed rgba(0, 238, 255, 0.3);
-  animation: spin 25s linear infinite;
+  border: 1px solid rgba(0, 238, 255, 0.2);
+  animation: spin 30s linear infinite;
   z-index: 1;
+  box-shadow: 0 0 50px rgba(0, 0, 255, 0.1), inset 0 0 50px rgba(0, 0, 255, 0.1);
 }
 
-body.light-mode .orbit-circle {
-  border-color: rgba(0, 119, 238, 0.3);
-}
-
-/* Inner Faint Ring */
+/* Blue Segment Ring */
 .orbit-circle::before {
   content: '';
   position: absolute;
-  top: 30px;
-  left: 30px;
-  right: 30px;
-  bottom: 30px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   border-radius: 50%;
-  border: 1px solid rgba(157, 0, 255, 0.2);
-}
-
-/* Outer Glow Ring */
-.orbit-circle::after {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 10px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 238, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 238, 255, 0.05);
+  border: 2px solid transparent;
+  border-top-color: #00eeff;
+  border-right-color: #9d00ff;
+  filter: drop-shadow(0 0 10px #00eeff);
+  animation: spin 30s linear infinite;
+  /* Sync with orbit */
 }
 
 .orbit-icon {
   position: absolute;
-  width: 45px;
-  height: 45px;
-  background: var(--surface-color);
-  border: 1px solid var(--accent-color);
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  color: var(--accent-color);
-  box-shadow: 0 0 15px rgba(0, 238, 255, 0.3);
-  animation: spin-reverse 25s linear infinite;
+  font-size: 36px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: spin-reverse 30s linear infinite;
+  z-index: 3;
 }
 
+.orbit-icon i {
+  /* Ensure icons are visible */
+  color: inherit;
+}
+
+/* Specific Orbit Positions */
 .orbit-icon:nth-child(1) {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #e34c26;
 }
 
+/* HTML */
 .orbit-icon:nth-child(2) {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
+  color: #264de4;
 }
 
+/* CSS */
 .orbit-icon:nth-child(3) {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+  color: #f7df1e;
 }
 
+/* JS */
 .orbit-icon:nth-child(4) {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
+  color: #3776ab;
 }
 
+/* Python */
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .hero-img-container {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
     margin-top: 50px;
   }
 
   .main-profile-img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
   }
 }
 
 @media (max-width: 575px) {
   .hero-img-container {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
   }
 
   .main-profile-img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .orbit-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 170px;
+    height: 170px;
   }
 }
 
