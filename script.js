@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Modal Configuration & Logic */
 const projectData = {
+    project_hub: { title: "Project Ecosystem Hub", desc: "A centralized, high-performance portal showcasing my collection of AI systems and immersive web applications.", steps: ["Step 1: Open the Hub.", "Step 2: Explore Masterpieces.", "Step 3: Try Live Demos.", "Step 4: View Source."], link: "https://project.loganathan.site/" },
     learning: { title: "Learning Platform", desc: "An immersive educational ecosystem designed to redefine online learning.", steps: ["Step 1: Open the Platform.", "Step 2: Sign Up Profile.", "Step 3: Access HD Videos.", "Step 4: Track Progress."], link: "https://learn.loganathan.site/" },
     healthcare: { title: "Healthcare Portal", desc: "A next-gen medical dashboard with high-security data compliance.", steps: ["Step 1: Secure Login.", "Step 2: Vitals Tracking.", "Step 3: Appointment Hub.", "Step 4: Digital Reports."], link: "https://healthcare.loganathan.site/" },
     language: { title: "Language App", desc: "Linguistic tool leveraging smart algorithms for language mastery.", steps: ["Step 1: Choose Language.", "Step 2: Daily Fluency Goals.", "Step 3: AI Practice Sessions.", "Step 4: Leaderboard Status."], link: "https://ling.loganathan.site/" },
@@ -259,3 +260,4 @@ window.onclick = (e) => {
         document.body.style.overflow = "auto";
     }
 };
+
